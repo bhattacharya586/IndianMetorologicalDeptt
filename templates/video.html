@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  <title>मौसम विज्ञान केंद्र देहरादून</title>
+          <style>
+      a, a:link, a:visited {
+            color: #FFFAFA;
+            text-decoration: none;
+        }
+      .mapdiv{
+         width: 100%;
+         margin: auto;
+            display: block;
+      }
+      .mapdiv path {
+         fill: #de6666;
+         stroke: white;
+         stroke-width: 20px;
+         transition: fill 0.3s;
+      }
+      .mapdiv path:hover{
+         fill: #eeb1b1;
+      }
+      </style>
+<style>
+    body{
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+.testimonial{
+    background: #fff;
+    text-align: center;
+    padding: 30px 30px 50px;
+    margin: 0 15px 100px;
+    position: relative;
+}
+.testimonial:before,
+.testimonial:after{
+    content: "";
+    border-top: 40px solid white;
+    border-right: 125px solid transparent;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+}
+.testimonial:after{
+    border-right: none;
+    border-left: 125px solid transparent;
+    left: auto;
+    right: 0;
+}
+
+.testimonial .icon{
+    display: inline-block;
+    font-size: 80px;
+    color: #bd986b;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+.testimonial .description{
+    font-size: 16px;
+    color: #777;
+    text-align: justify;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    letter-spacing: -1px;
+}
+.testimonial .testimonial-content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.testimonial .pic{
+    display: inline-block;
+    border: 6px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px #daad86;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+}
+.testimonial .post{
+    display: block;
+    font-size: 14px;
+    color: #ffd9b8;
+}
+.owl-theme .owl-controls{
+    margin-top: 60px;
+}
+.owl-theme .owl-controls .owl-page span{
+    width: 32px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #bd986b;
+    margin: 5px;
+    opacity: 1;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    background: #ffd9b8;
+    border-color: #fff;
+}
+    .pic img{
+        width: 100px !important;
+        height: 50px;
+    }
+</style>
+  <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/errorstyles.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kulim+Park|Patua+One|Righteous|Solway&display=swap" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/clean-blog.min.css') }}" rel="stylesheet">
+  <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+{% endblock %}
+</head>
+
+<body>
+
+  <!-- Navigation -->
+
+
+
+    <header class="masthead" style="background-color: aquamarine;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+            <div class="row">
+                <div class="col" style="margin-top: 2.5rem;">
+                <img src="{{ url_for('static',filename="images/img0003.png") }}"
+                     class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="col mt-2">
+                    <div class="row text-center" style="color: white;">
+                    <div class="col-lg-6">
+                      <pre style="font-weight:bolder;color: white;">भारत सरकार</pre>
+                    </div>
+                    <div class="col-lg-6">
+                      <pre style="font-weight:bolder;color: white;">भारत मौसम विज्ञान विभाग</pre>
+                    </div>
+                  </div>
+                  <div class="row text-center" style="color: white;">
+                    <div class="col">
+                      <pre style="font-weight:bolder;color: white;">पृथ्वी विज्ञान मंत्रालय</pre>
+                    </div>
+                    <div class="col">
+                      <pre style="font-weight:bolder;color: white;">मौसम विज्ञान केंद्र देहरादून</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col" style="margin-top: 2.5rem;">
+                <img src="{{ url_for('static',filename="images/img0003.png") }}"
+                     class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+  </header>
+
+  <div class="container">
+     <video
+        class="video-js"
+        controls
+        preload="auto"
+        {% set t = thumbnail[0][33:] %}
+             {% set v = video_url[0][33:] %}
+        poster="{{ url_for('static', filename=t) }}"
+        data-setup="{}"
+        style="width: 100%;height: 250px;"
+      >
+        <source src="{{ url_for('static', filename=v) }}" type="video/mp4" />
+        <source src="{{ url_for('static', filename=v) }}" type="video/webm" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+          web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+          >
+        </p>
+      </video>
+     <h6 class="text-center text-secondary mt-1">Shri Bikram Jagat MC Dehradun Bulletins (Date: {{ datee[0] }} Time: {{ timee[0] }} India)</h6>
+
+  </div>
+
+  <div class="container">
+      <h1 class="text-center text-danger" style="font-size:35px;font-family: 'Righteous', cursive;"><strong>Video Gallery</strong></h1>
+	
+  </div>
+
+
+      <script src="{{ url_for('static',filename="js/skycons.js") }}"></script>
+      <script>
+      var icons = new Skycons({"color": "orange"}),
+          list  = [
+            "clear-day", "clear-night", "partly-cloudy-day",
+            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+            "fog"
+          ],
+          i;
+
+      for(i = list.length; i--; ) {
+        var weatherType = list[i],
+            elements = document.getElementsByClassName( weatherType );
+        for (e = elements.length; e--;){
+            icons.set( elements[e], weatherType );
+        }
+        }
+      icons.play();
+    </script>
+
+      <script type="text/javascript">
+                   var now = new Date();
+                   var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+                   var daysshort = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+
+                   var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+                    var monthshort = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+                   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+                   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+                   today = daysshort[now.getDay()] + ", " + monthshort[now.getMonth()] + " " + date + ", " + year;
+                   var basicdate = document.getElementById('basicdate');
+                   var todaysday1 = document.getElementById('todaysday1');
+                   var todaysday2 = document.getElementById('todaysday2');
+                   var todaysday3 = document.getElementById('todaysday3');
+                   var todaysday4 = document.getElementById('todaysday4');
+                   basicdate.innerHTML = today;
+                   todaysday1.innerHTML = daysshort[now.getDay()];
+                   todaysday2.innerHTML = daysshort[now.getDay()];
+                   todaysday3.innerHTML = daysshort[now.getDay()];
+                   todaysday4.innerHTML = daysshort[now.getDay()];
+      </script>
+    <hr>
+
+    <div class="footer-copyright bg-danger text-center py-3">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+<a href="#">WoidTech</a>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kulim+Park|Patua+One|Righteous|Solway&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <style>
+
+    body{
+            font-family: 'Righteous', cursive;
+            background-color: #ffffff;
+		    font-size:17px;
+    }
+    .thumbnail{
+        border-radius: 25%;
+    }
+    .item_n{
+        text-align:center;
+        display:block;
+        background-color: transparent;
+        border: 1px solid transparent;
+        margin-right: 10px;
+        margin-bottom: 1px;
+
+    }
+    .sp_p{
+        margin-bottom: -0.1rem;
+    }
+    .card-rad{
+
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;;
+    }
+      a, a:link, a:visited {
+            color: #FFFAFA;
+            text-decoration: none;
+        }
+      </style>
+
+<style>
+    .word{
+        word-wrap: break-word;
+    }
+</style>
+
+<body>
+
+  <!-- Navigation -->
+    <div class="container">
+      <div class="row" style="background-color: #50927e;">
+        <div class="col-lg-12 col-md-12 mx-auto">
+          <div class="row">
+            <div class="col" style="margin-top: 2.5rem;">
+              <img src="http://3.92.178.108/static/images/img0003.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col mt-2">
+              <div class="row text-center" style="color: white;">
+                <div class="col-lg-6">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">भारत सरकार</pre>
+                </div>
+                <div class="col-lg-6">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">भारत मौसम विज्ञान विभाग</pre>
+                </div>
+              </div>
+              <div class="row text-center" style="color: white;">
+                <div class="col">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">पृथ्वी विज्ञान मंत्रालय</pre>
+                </div>
+                <div class="col">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">मौसम विज्ञान केंद्र देहरादून</pre>
+                </div>
+              </div>
+            </div>
+            <div class="col" style="margin-top: 2.5rem;">
+              <img src="http://3.92.178.108/static/images/img0003.png" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="mt-5 mb-3 text-center text-primary" style="font-size:35px;font-family: 'Righteous', cursive;"><strong>District Rainfall
+        Forecast</strong></h1>
+
+        <div class="container ">
+          <div class="row">
+            <div class="col-lg-12">
+                <form action="/ffsearch" method="post" style="width: auto">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" style="height: 3rem;" name="cityname" onchange="this.form.submit()" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option selected>Choose District ({{ city }})</option>
+                            {% for i in citylistdata %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                    <noscript>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" style="height: 3rem;" type="submit" id="button-addon2">Search</button>
+                        </div>
+                    </noscript>
+                </div>
+            </form>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+  <div class="container p-4 mt-1 table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="text-white" style="background-color: black;">
+        <tr>
+          <th scope="col">DAY</th>
+          <th scope="col">INSTY</th>
+          <th scope="col">DISTR</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% set odd = namespace(value=1) %}
+        {% set even = namespace(value=0) %}
+        {%  for i in range(5) %}
+            <tr>
+                <th scope="row"><div id="basic{{ i }}"></div></th>
+                <td>{{ listj[even.value] }}</td>
+                     {% if(listj[odd.value]=="WS") %}
+                        <td style="font-size:15px;color: #856404;" bgcolor="orange">{{ listj[odd.value] }}</td>
+                     {% elif(listj[odd.value]=="ISOL") %}
+                        <td style="font-size:15px;color: #721c24;" bgcolor="#f8d7da">{{ listj[odd.value] }}</td>
+                     {% elif(listj[odd.value]=="FWS") %}
+                        <td style="font-size:15px;color: #856404;" bgcolor="#fff3cd">{{ listj[odd.value] }}</td>
+                     {% elif(listj[odd.value]=="SCT") %}
+                        <td style="font-size:15px;color: #155724;" bgcolor="#d4edda">{{ listj[odd.value] }}</td>
+                     {% else %}
+                        <td style="font-size:15px">{{ listj[odd.value] }}</td>
+                    {% endif %}
+            </tr>
+            {% set odd.value = odd.value + 2 %}
+            {% set even.value = even.value + 2 %}
+        {%  endfor %}
+      </tbody>
+    </table>
+  </div>
+
+	<script>
+           function GetDates(startDate, daysToAdd) {
+                var aryDates = [];
+                var basic0,basic1,basic2,basic3,basic4;
+                for (var i = 0; i <= daysToAdd; i++) {
+                    var currentDate = new Date();
+                    currentDate.setDate(startDate.getDate() + i);
+                    aryDates.push(DayAsString(currentDate.getDay()));
+                    if(i==0)
+                    {
+                        document.getElementById("basic0").innerHTML= DayAsString(currentDate.getDay());
+                    }
+                    if (i == 1) {
+                        document.getElementById("basic1").innerHTML = DayAsString(currentDate.getDay());
+                    }
+                    if (i == 2) {
+                        document.getElementById("basic2").innerHTML = DayAsString(currentDate.getDay());
+                    }
+                    if (i == 3) {
+                        document.getElementById("basic3").innerHTML = DayAsString(currentDate.getDay());
+                    }
+                    if (i == 4)
+                    {
+                        document.getElementById("basic4").innerHTML = DayAsString(currentDate.getDay());
+                    }
+                }
+                return aryDates;
+            }
+
+
+            function DayAsString(dayIndex) {
+                var weekdays = new Array(7);
+                weekdays[0] = "Sun";
+                weekdays[1] = "Mon";
+                weekdays[2] = "Tue";
+                weekdays[3] = "Wed";
+                weekdays[4] = "Thu";
+                weekdays[5] = "Fri";
+                weekdays[6] = "Sat";
+
+                return weekdays[dayIndex];
+            }
+
+            var startDate = new Date();
+            var aryDates = GetDates(startDate, 4);
+
+            document.getElementById("demo").innerHTML=aryDates;
+
+
+	</script>
+
+
+    <div class="container mb-5">
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne" style="background-color: black;">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: white;">
+                        <span class="text-center">LEGENDS</span>
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <p class="text-primary text-center"><b>INTENSITY(INSTY)</b></p>
+
+        <div class="alert alert-success" role="alert">L =&gt; Light (2.5-15.5 mm)</div>
+                <div class="alert alert-warning" role="alert">M =&gt; Moderate (15.6-64.4 mm)</div>
+                <div class="alert alert-warning" role="alert" style="background-color: orange">H =&gt; Heavy (64.5-115.5 mm)</div>
+        <div class="alert alert-danger" role="alert">VL =&gt; Very Light (Trace-2.4 mm)</div>
+
+
+
+                            <p class="text-primary text-center"><b>DISTRIBUTION(DISTR)</b></p>
+
+                <div class="alert alert-success" role="alert">SCT =&gt; Scattered (Between 25-50% Area)</div>
+                      <div class="alert alert-warning" role="alert">FWS =&gt; Fairly Wide Spread (Between 50-75% Area)</div>
+                      <div class="alert alert-warning" role="alert" style="background-color: orange">WS =&gt; Wide Spread (More than 75% Area)</div>
+        <div class="alert alert-danger" role="alert">ISOL =&gt; Isolated (Upto 25% Area)</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright bg-danger text-center py-3">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+<a href="#">WoidTech</a>
+
+    </div>
+<!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

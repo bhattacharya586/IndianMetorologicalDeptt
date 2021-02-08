@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='owlcarousel/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owlcarousel/owl.carousel.min.css') }}">
+    <script src="{{ url_for('static', filename='owlcarousel/owl.carousel.min.js') }}"></script>
+    <link
+        href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Arvo|Baloo|Courier+Prime|Crete+Round|Dancing+Script|El+Messiri|Francois+One|Galada|Hind|Josefin+Slab|Kumar+One|Lobster|Luckiest+Guy|Monoton|Orbitron|Patua+One|Poiret+One|Poppins|Righteous|Teko&display=swap"
+        rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                smartSpeed: 850,
+                loop: true,
+                autoplay: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 1,
+                        nav: false
+                    }
+                }
+            });
+        });
+    </script>
+    <title>मौसम विज्ञान केंद्र देहरादून</title>
+    <style>
+        body {
+            font-family: 'Righteous', cursive;
+            background-color: #ffffff;
+            font-size: 17px;
+        }
+
+        .thumbnail {
+            border-radius: 25%;
+        }
+
+        .item_n {
+            text-align: center;
+            display: block;
+            background-color: transparent;
+            border: 1px solid transparent;
+            margin-right: 10px;
+            margin-bottom: 1px;
+
+        }
+
+        .sp_p {
+            margin-bottom: -0.1rem;
+        }
+
+        .card-rad {
+
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="background-color: #50927e;">
+            <div class="col-lg-12 col-md-12 mx-auto">
+                <div class="row">
+                    <div class="col" style="margin-top: 2.5rem;">
+                        <img src="../static/images/img0003.png" class="img-fluid"
+                            alt="Responsive image">
+                    </div>
+                    <div class="col mt-2">
+                        <div class="row text-center" style="color: white;">
+                            <div class="col-lg-6">
+                                <pre style="font-size:17px;font-weight:bolder;color: white;">भारत सरकार</pre>
+                            </div>
+                            <div class="col-lg-6">
+                                <pre
+                                    style="font-size:17px;font-weight:bolder;color: white;">भारत मौसम विज्ञान विभाग</pre>
+                            </div>
+                        </div>
+                        <div class="row text-center" style="color: white;">
+                            <div class="col">
+                                <pre
+                                    style="font-size:17px;font-weight:bolder;color: white;">पृथ्वी विज्ञान मंत्रालय</pre>
+                            </div>
+                            <div class="col">
+                                <pre
+                                    style="font-size:17px;font-weight:bolder;color: white;">मौसम विज्ञान केंद्र देहरादून</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-top: 2.5rem;">
+                        <img src="../static/images/img0003.png" class="img-fluid"
+                            alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="/search" method="post">
+                    <div class="input-group mb-3">
+                        <select class="custom-select" style="height: 3rem;" name="cityname"
+                            onchange="this.form.submit()" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Choose City ({{ city }})</option>
+                            {% for i in citylistdata %}
+                            <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                        </select>
+                        <noscript>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" style="height: 3rem;" type="submit"
+                                    id="button-addon2">Search</button>
+                            </div>
+                        </noscript>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row p-4">
+            <div class="col" style="width: 50%;">
+                <h4 class="text-dark"><strong>{{ city }}, India <i class="fa fa-map-marker"></i></strong></h4>
+                <p class="text-secondary"><span id="basicdate"></span></p>
+		<p class="text-primary" style="margin-top:-1rem;">{{ tableofdata[x][3] }}</p>
+                <p class="text-secondary" style="font-size: 21px;display:inline-block;">
+                    {{ listofdata[x][1].strip()[:-2] }}°/{{ listofdata[x][0].strip()[:-2] }}° C</p>
+            </div>
+            <div class="col" style="width: 50%;">
+                {% if tableofdata[x][3] == "Clear" %}
+                <canvas class="clear-day" width="120" height="120" style="margin-top:1.5rem;margin-left:1%;"></canvas>
+                {% elif tableofdata[x][3] == "Cloudy" %}
+                <canvas class="partly-cloudy-day" width="120" height="120"
+                    style="margin-top:1.5rem;margin-left:1%;"></canvas>
+                {% elif tableofdata[x][3] == "Thundery" %}
+                <img class="thunder" src="{{ url_for('static', filename='images/thunder.svg') }}" height="120"
+                    width="120" style="fill:red;margin-top:1.5rem;margin-left:1%;">
+                {% elif tableofdata[x][3] == "Rainy" %}
+                <canvas class="rain" width="120" height="120" style="margin-top:1.5rem;margin-left:1%;"></canvas>
+                {% elif tableofdata[x][3] == "Snowy" %}
+                <canvas class="snow" width="120" height="120" style="margin-top:1.5rem;margin-left:1%;"></canvas>
+                {% elif tableofdata[x][3] == "Foggy or Misty" %}
+                <canvas class="fog" width="120" height="120" style="margin-top:1.5rem;margin-left:1%;"></canvas>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row p-4" style="margin-top:-3rem;margin-bottom:0.5rem;">
+            <div class="col-lg-12 text-secondary" style="font-family: 'Patua One', cursive;">
+                <p align="justify">{{ tableofdata[x][2] }}.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="card bg-white shadow-lg p-3 card-rad">
+                    <div class="row">
+                        {% set xx = x %}
+                        {% set n = namespace(value=0) %}
+                        {% set prob = 0 %}
+
+                        {% if((lengu-xx-1) <= 4) %}
+                        {% for i in range(xx+1,lengu) %}
+                        <div class="col" style="width: 25%;">
+                            {% set n.value = n.value + 1 %}
+                            {% set dt = tableofdata[i][0].split(' ') %}
+                            <div class="item_n">
+                                {% set dt = tableofdata[i][0].split(' ') %}
+                                <p class="text-dark sp_p">{{ dt[0] }} {{ dt[1][:3] }}</p>
+                                <p class="text-warning sp_p" style="font-size: 30px;">
+                                    {% if tableofdata[i][3] == "Clear" %}
+                                    <canvas class="clear-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Cloudy" %}
+                                    <canvas class="partly-cloudy-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Thundery" %}
+                                    <img class="thunder" src="{{ url_for('static', filename='images/thunder.svg') }}"
+							 height="30" width="30" style="fill:red;margin-top:1rem;margin-left:1%;margin-bottom:1rem">
+                                    {% elif tableofdata[i][3] == "Rainy" %}
+                                    <canvas class="rain" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Snowy" %}
+                                    <canvas class="snow" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Foggy or Misty" %}
+                                    <canvas class="fog" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% endif %}
+                                </p>
+                                <p class="text-dark sp_p" style="display:inline-block;">
+                                    {{ listofdata[i][1].strip()[:-2] }}°</p>
+                                <br>
+                                <p class="text-secondary sp_p" style="font-size: 15px;display:inline-block;">
+                                    {{ listofdata[i][0].strip()[:-2] }}°</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% set prob = lengu-1 %}
+                        {% for i in range(4-n.value) %}
+                        <div class="col" style="width: 25%;">
+                            {% set dt = tableofdata[prob][0].split(' ') %}
+                            <div class="item_n">
+                                <p class="text-dark sp_p">{{ dt[0] }} {{ dt[1][:3] }}</p>
+                                <p class="text-warning sp_p" style="font-size: 30px;">
+                                    {% if tableofdata[prob][3] == "Clear" %}
+                                    <canvas class="clear-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[prob][3] == "Cloudy" %}
+                                    <canvas class="partly-cloudy-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[prob][3] == "Thundery" %}
+                                    <img class="thunder" src="{{ url_for('static', filename='images/thunder.svg') }}"
+							 height="30" width="30" style="fill:red;margin-top:1rem;margin-left:1%;margin-bottom:1rem">
+                                    {% elif tableofdata[prob][3] == "Rainy" %}
+                                    <canvas class="rain" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[prob][3] == "Snowy" %}
+                                    <canvas class="snow" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[prob][3] == "Foggy or Misty" %}
+                                    <canvas class="fog" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% endif %}
+                                </p>
+                                <p class="text-dark sp_p" style="display:inline-block;">
+                                    {{ listofdata[prob][1].strip()[:-2] }}°</p>
+                                <br>
+                                <p class="text-secondary sp_p" style="font-size: 15px;display:inline-block;">
+                                    {{ listofdata[prob][0].strip()[:-2] }}°</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {% set n.value = 0 %}
+                        {% for i in range(xx+1,lengu-1) %}
+                        {% if(n.value<4) %}
+                        <div class="col" style="width: 25%;">
+                            {% set dt = tableofdata[i][0].split(' ') %}
+                            <div class="item_n">
+                                <p class="text-dark sp_p">{{ dt[0] }} {{ dt[1][:3] }}</p>
+                                <p class="text-warning sp_p" style="font-size: 30px;">
+                                    {% if tableofdata[i][3] == "Clear" %}
+                                    <canvas class="clear-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Cloudy" %}
+                                    <canvas class="partly-cloudy-day" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Thundery" %}
+                                    <img class="thunder" src="{{ url_for('static', filename='images/thunder.svg') }}"
+							 height="30" width="30" style="fill:red;margin-top:1rem;margin-left:1%;margin-bottom:1rem;">
+                                    {% elif tableofdata[i][3] == "Rainy" %}
+                                    <canvas class="rain" width="30" height="30"
+                                        style="margin-top:1rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Snowy" %}
+                                    <canvas class="snow" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% elif tableofdata[i][3] == "Foggy or Misty" %}
+                                    <canvas class="fog" width="30" height="30"
+                                        style="margin-top:1.0rem;margin-left:1%;"></canvas>
+                                    {% endif %}
+                                </p>
+                                <p class="text-dark sp_p" style="display:inline-block;">
+                                    {{ listofdata[i][1].strip()[:-2] }}°</p>
+                                <br>
+                                <p class="text-secondary sp_p" style="font-size: 15px;display:inline-block;">
+                                    {{ listofdata[i][0].strip()[:-2] }}°</p>
+                            </div>
+                        </div>
+                        {% set n.value = n.value + 1 %}
+                        {% endif %}
+
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="text-dark">Additional Info (Weather Description)</p>
+                <div class="owl-carousel owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage">
+                            {% for i in range(xx+1,lengu) %}
+                            <div class="owl-item ">
+                                <p class="text-left text-info" style="font-family: 'Patua One', cursive;"
+                                    align="justify"><span class="text-secondary">{{ tableofdata[i][0] }} 2020 : </span>
+                                    {{ tableofdata[i][2] }}.</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="accordion" id="accordionExample">
+            <div class="card shadow">
+                <div class="card-header" id="headingOne" style="background-color: #000000;">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link text-center" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                            style="color: white;">
+                            Icons & Weather Descriptions
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-light">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Icons</th>
+                                        <th scope="col">Descriptions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><canvas class="clear-day" width="30" height="30"
+                                                style="margin-left:25%;"></canvas></td>
+                                        <td class="">Clear Sky</td>
+                                    </tr>
+                                    <tr>
+                                        <td><canvas class="partly-cloudy-day" width="30" height="30"
+                                                style="margin-left:25%;"></canvas></td>
+                                        <td class="">Cloudy sky</td>
+                                    </tr>
+                                    <tr>
+                                        <td> <img class="thunder" src="/static/images/thunder.svg" height="30"
+                                                width="30" style="fill:red;margin-left:25%;"></td>
+                                        <td class="">Thunderstorm or Duststorm</td>
+                                    </tr>
+                                    <tr>
+                                        <td><canvas class="rain" width="30" height="30"
+                                                style="margin-left:25%;"></canvas></td>
+                                        <td class="">Rain</td>
+                                    </tr>
+                                    <tr>
+                                        <td><canvas class="snow" width="30" height="30"
+                                                style="margin-left:25%;"></canvas></td>
+                                        <td class="">Snow</td>
+                                    </tr>
+                                    <tr>
+                                        <td><canvas class="fog" width="30" height="30"
+                                                style="margin-left:25%;"></canvas></td>
+                                        <td class="">Fog or Mist or Dust</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer-copyright bg-danger text-center py-3">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+        <a href="#" class="text-white">WoidTech</a>
+
+    </div>
+    <script src="{{ url_for('static',filename="js/skycons.js") }}"></script>
+    <script>
+        var icons = new Skycons({ "color": "orange" }),
+            list = [
+                "clear-day", "clear-night", "partly-cloudy-day",
+                "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                "fog"
+            ],
+            i;
+
+        for (i = list.length; i--;) {
+            var weatherType = list[i],
+                elements = document.getElementsByClassName(weatherType);
+            for (e = elements.length; e--;) {
+                icons.set(elements[e], weatherType);
+            }
+        }
+
+        icons.play();
+    </script>
+    <script type="text/javascript">
+        var now = new Date();
+        var days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        var daysshort = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+        var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+        var monthshort = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+        var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+        var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+        today = monthshort[now.getMonth()] + " " + date + ", " + year;
+        var basicdate = document.getElementById('basicdate');
+        var todaysday1 = document.getElementById('todaysday1');
+        var todaysday2 = document.getElementById('todaysday2');
+        var todaysday3 = document.getElementById('todaysday3');
+        var todaysday4 = document.getElementById('todaysday4');
+        basicdate.innerHTML = today;
+        todaysday1.innerHTML = daysshort[now.getDay()];
+        todaysday2.innerHTML = daysshort[now.getDay()];
+        todaysday3.innerHTML = daysshort[now.getDay()];
+        todaysday4.innerHTML = daysshort[now.getDay()];
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{% if(alert != "ALERT(BE PREPARED) NO WARNING (NO ACTION) " and alert) %}
+
+{{alert}}
+
+{% endif %}
+{% if(watch and watch!="WATCH:  ")%}
+
+{{watch}}
+
+{%endif%}
+{% if(alert=="ALERT(BE PREPARED) NO WARNING (NO ACTION) " or watch==" ") %}
+No Data for warning
+{% endif %}

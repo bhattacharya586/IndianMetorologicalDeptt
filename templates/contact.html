@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  <title>मौसम विज्ञान केंद्र देहरादून</title>
+  <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/errorstyles.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/clean-blog.min.css') }}" rel="stylesheet">
+{% endblock %}
+</head>
+<body>
+
+  <!-- Navigation -->
+  
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static',filename="img/mcdun.jpg") }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Contact Us</h1>
+            <span class="subheading">Have questions? We have answers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+      {% if msg=="Message Success" %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Congratulations!</strong> Feedback Sent to the Authority.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+      {% endif %}
+  {% if msg=="notsend" %}
+
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Attention!</strong> Feedback can't Sent to the Authority.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+  {% endif %}
+      <div class="card-deck">
+  <div class="card shadow">
+    <img src="{{ url_for('static',filename="img/bikram.jpg") }}"  class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text"><b>
+        DIRECTOR/HEAD,<br>
+        SH. BIKRAM SINGH,<br>
+        PHONE NO - 01352660900<br>
+        EMAIL-ID - bikaram.jagat@gmail.com</b></p>
+    </div>
+  </div>
+  <div class="card shadow">
+    <img src="{{ url_for('static',filename="img/imd.jpg") }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text"><b>
+        DIRECTOR,<br>
+        METEOROLOGICAL CENTRE,<br>
+        MOHKAMPUR, HARIDWAR ROAD,<br>
+        DEHRADUN,UTTARAKHAND,<br>
+        PINCODE - 248005,<br>
+        PHONE NO - 01352660434<br>
+        FAX NO - 01352660434<br>
+        EMAIL-ID - mcdehradun@yahoo.co.in</b></p>
+     </div>
+  </div>
+  
+</div>
+  </div>
+  <!-- Main Content 
+  <div class="container">
+    <div class="row">
+
+
+      <div class="col">
+       <h3 class="text-center text-danger mt-5">Your Feedback</h3>
+          <p>We need your feedback to enhance this app so that we can reach everyone of you and help resolving your problems.</p>
+        <form name="sentMessage" id="contactForm" novalidate action="/sendmsg" method="post">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Name" name="name" required data-validation-required-message="Please enter your name.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Email Address</label>
+              <input type="email" class="form-control" placeholder="Email Address" name="email" required data-validation-required-message="Please enter your email address.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" placeholder="Phone Number" name="phone" required data-validation-required-message="Please enter your phone number.">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Message</label>
+              <textarea rows="5" class="form-control" placeholder="Message" name="msg" required data-validation-required-message="Please enter a message."></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton" style="float: right">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>-->
+
+  <hr>
+
+
+
+    <div class="footer-copyright bg-danger text-center py-3">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+<a href="#">WoidTech</a>
+
+  </div>
+
+ <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+
+</body>
+
+</html>

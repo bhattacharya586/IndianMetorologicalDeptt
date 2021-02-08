@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+  <title>मौसम विज्ञान केंद्र देहरादून</title>
+  <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/errorstyles.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/clean-blog.min.css') }}" rel="stylesheet">
+{% endblock %}
+</head>
+
+<body>
+
+  <!-- Navigation -->
+ <header class="masthead" style="background-color: aquamarine;">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+            <div class="row">
+                <div class="col" style="margin-top: 2.5rem;">
+                <img src="{{ url_for('static',filename="images/img0003.png") }}"
+                     class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="col mt-2">
+                    <div class="row text-center" style="color: white;">
+                    <div class="col-lg-6">
+                      <pre style="font-weight:bolder;color: white;">भारत सरकार</pre>
+                    </div>
+                    <div class="col-lg-6">
+                      <pre style="font-weight:bolder;color: white;">भारत मौसम विज्ञान विभाग</pre>
+                    </div>
+                  </div>
+                  <div class="row text-center" style="color: white;">
+                    <div class="col">
+                      <pre style="font-weight:bolder;color: white;">पृथ्वी विज्ञान मंत्रालय</pre>
+                    </div>
+                    <div class="col">
+                      <pre style="font-weight:bolder;color: white;">मौसम विज्ञान केंद्र देहरादून</pre>
+                    </div>
+                  </div>
+                </div>
+                <div class="col" style="margin-top: 2.5rem;">
+                <img src="{{ url_for('static',filename="images/img0003.png") }}"
+                     class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+  </header>
+   <div class="container">
+       <h1 class="text-center text-danger">News Headlines</h1>
+       <div class="card-deck">
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[0] }}</h5>
+				      <p class="card-text">{{ desc[0] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[0] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[1] }}</h5>
+				      <p class="card-text">{{ desc[1] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[1] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[2] }}</h5>
+				      <p class="card-text">{{ desc[2] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[2] }}</small></p>
+				    </div>
+				  </div>
+			</div>
+       <div class="card-deck">
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[3] }}</h5>
+				      <p class="card-text">{{ desc[3] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[3] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[4] }}</h5>
+				      <p class="card-text">{{ desc[4] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[4] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[5] }}</h5>
+				      <p class="card-text">{{ desc[5] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[5] }}</small></p>
+				    </div>
+				  </div>
+			</div>
+       <div class="card-deck">
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[6] }}</h5>
+				      <p class="card-text">{{ desc[6] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[6] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[7] }}</h5>
+				      <p class="card-text">{{ desc[7] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[7] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[8] }}</h5>
+				      <p class="card-text">{{ desc[8] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[8] }}</small></p>
+				    </div>
+				  </div>
+			</div>
+       <div class="card-deck">
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[9] }}</h5>
+				      <p class="card-text">{{ desc[9] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[9] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[10] }}</h5>
+				      <p class="card-text">{{ desc[10] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[10] }}</small></p>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-body">
+				      <h5 class="card-title">{{ news[11] }}</h5>
+				      <p class="card-text">{{ desc[11] }}</p>
+				      <p class="card-text btm"><small class="text-muted">{{ date[11] }}</small></p>
+				    </div>
+				  </div>
+			</div>
+   </div>
+<hr>
+
+    <div class="footer-copyright bg-danger text-center py-3">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+<a href="https://www.instagram.com/zealtechnologyindia/" target="_blank"> Zeal Technology</a>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+</body>
+</html>

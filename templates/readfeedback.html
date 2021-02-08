@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+
+<div class="table-responsive">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for j in d %}
+            <tr>
+              <td>{{ j[0] }}</td>
+              <td>{{ j[1] }}</td>
+              <td>{{ j[2] }}</td>
+              <td>{{ j[3] }}</td>
+            </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+</div>
+
+
+ <script src="{{ url_for('static',filename="js/skycons.js") }}"></script>
+
+       <script>
+      var icons = new Skycons({"color": "orange"}),
+          list  = [
+            "clear-day", "clear-night", "partly-cloudy-day",
+            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+            "fog"
+          ],
+          i;
+
+      for(i = list.length; i--; ) {
+    var weatherType = list[i],
+        elements = document.getElementsByClassName( weatherType );
+    for (e = elements.length; e--;){
+        icons.set( elements[e], weatherType );
+    }
+}
+
+      icons.play();
+    </script>
+
+
+                    <script type="text/javascript">
+                   var now = new Date();
+                   var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+                   var daysshort = new Array('Sun','Mon','Tue','Wed','Thu','Fri','Sat');
+
+                   var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+var monthshort = new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+                   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+                   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+                   today = daysshort[now.getDay()] + ", " + monthshort[now.getMonth()] + " " + date + ", " + year;
+                   var basicdate = document.getElementById('basicdate');
+                   var todaysday1 = document.getElementById('todaysday1');
+                   var todaysday2 = document.getElementById('todaysday2');
+                   var todaysday3 = document.getElementById('todaysday3');
+                   var todaysday4 = document.getElementById('todaysday4');
+                   basicdate.innerHTML = today;
+                   todaysday1.innerHTML = daysshort[now.getDay()];
+                   todaysday2.innerHTML = daysshort[now.getDay()];
+                   todaysday3.innerHTML = daysshort[now.getDay()];
+                   todaysday4.innerHTML = daysshort[now.getDay()];
+                </script>
+
+{% endblock %}

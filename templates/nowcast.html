@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <title>मौसम विज्ञान केंद्र देहरादून</title>
+  <!-- Bootstrap core CSS -->
+
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kulim+Park|Patua+One|Righteous|Solway&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+</head>
+  <style>
+    
+    body{
+            font-family: 'Righteous', cursive;
+            background-color: #ffffff;
+		    font-size:17px;
+    }
+    .thumbnail{
+        border-radius: 25%;
+    }
+    .item_n{
+        text-align:center;
+        display:block;
+        background-color: transparent;
+        border: 1px solid transparent;
+        margin-right: 10px;
+        margin-bottom: 1px;
+        
+    }
+    .sp_p{
+        margin-bottom: -0.1rem;
+    }
+    .card-rad{
+        
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;;
+    }
+      a, a:link, a:visited {
+            color: #FFFAFA;
+            text-decoration: none;
+        }
+      </style>
+<style>
+    .word{
+        word-wrap: break-word;
+    }
+</style>
+
+<body>
+
+  <!-- Navigation -->
+    <div class="container">
+      <div class="row" style="background-color: #50927e;">
+        <div class="col-lg-12 col-md-12 mx-auto">
+          <div class="row">
+            <div class="col" style="margin-top: 2.5rem;">
+              <img src="http://3.92.178.108/static/images/img0003.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col mt-2">
+              <div class="row text-center" style="color: white;">
+                <div class="col-lg-6">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">भारत सरकार</pre>
+                </div>
+                <div class="col-lg-6">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">भारत मौसम विज्ञान विभाग</pre>
+                </div>
+              </div>
+              <div class="row text-center" style="color: white;">
+                <div class="col">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">पृथ्वी विज्ञान मंत्रालय</pre>
+                </div>
+                <div class="col">
+                  <pre style="font-size:17px;font-weight:bolder;color: white;">मौसम विज्ञान केंद्र देहरादून</pre>
+                </div>
+              </div>
+            </div>
+            <div class="col" style="margin-top: 2.5rem;">
+              <img src="http://3.92.178.108/static/images/img0003.png" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<h1 class="text-center text-primary mt-5" style="font-size:35px;font-family: 'Righteous', cursive;"><strong>Nowcast</strong></h1>
+
+
+  <div class="container mb-5">
+    <div class="alert " role="alert">
+        <p class="text-left"><strong>{{ ms[0] }}</strong></p>
+        <p class="text-left"><strong>{{ ms[1] }}</strong> </p>
+        <br>
+        <div class="alert alert-warning shadow-lg card p-3" role="alert">
+          <h6 class="text-center">{{ ms[2] }}</h6>
+            <p align="justify" style="font-family: 'Patua One', cursive;">{{ ms[3] }}</p>
+        </div>
+    </div>
+  </div>
+
+    <div class="footer-copyright bg-danger text-center py-3" style="bottom: 0;width: 100%;">
+        <p class="text-center text-white">मौसम विज्ञान केंद्र देहरादून</p>
+        <span class="text-warning">© 2019 Copyright:</span>
+<a href="#">WoidTech</a>
+
+  </div>
+<!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+</body>
+</html>
